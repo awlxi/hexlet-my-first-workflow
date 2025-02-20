@@ -1,8 +1,11 @@
 name: main
-on: push
+on:
+  push:
+    branches: [ "main" ]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: say-hello
+      - name: Run say-hello
+        run: make say-hello
