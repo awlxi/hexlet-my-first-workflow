@@ -1,19 +1,10 @@
-name: Run Makefile
+name: main
 
-on:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Make
-        run: sudo apt-get install make
-
-      - name: Run make say-hello
-        run: make say-hello
+      - uses: actions/checkout@v4
+      - run: make say-hello
